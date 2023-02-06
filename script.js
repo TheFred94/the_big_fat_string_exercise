@@ -11,9 +11,13 @@ function showOutput() {
   // Variables for 1st option (0)
   console.log(options);
   if (options === "0") {
+    // The first letter of a word
     let firstLet = input.substring(0, 1);
+    // The rest of a word
     let restName = input.substring(1);
+    // capitalizes the first letter
     let capFirstLet = firstLet.toUpperCase();
+    // shows the output
     output = capFirstLet + restName;
   } else if (options === "1") {
     const fullName = input;

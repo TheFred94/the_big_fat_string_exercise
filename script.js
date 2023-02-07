@@ -47,6 +47,13 @@ function showOutput() {
     output = files.some((files) => fileName.endsWith(files));
     console.log(output);
   } else if (options === "5") {
+    const password = input;
+    let passwordLength = password.length;
+
+    let hidePassword = "*".repeat(passwordLength);
+
+    output = hidePassword;
+    console.log(output);
   } else if (options === "6") {
     const name2 = input;
     // takes the first two letters of the word
@@ -64,3 +71,14 @@ function showOutput() {
   document.getElementById("outputfield").value = output;
   console.log(output);
 }
+
+let fullWord = "this is a long word that contains a -hyphen";
+
+let stringWord = fullWord
+  .split(/[- ]/)
+  .map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  })
+  .join(" ");
+
+console.log(stringWord);

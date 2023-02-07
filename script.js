@@ -48,6 +48,17 @@ function showOutput() {
     console.log(output);
   } else if (options === "5") {
   } else if (options === "6") {
+    const name2 = input;
+    // takes the first two letters of the word
+    const firstTwo = name2.substring(0, 2);
+    // takes the 3rd letter of the word
+    const thirdLet = name2.substring(2, 3);
+    // Capitalized the 3rd letter of the word
+    const capThirdLet = thirdLet.toUpperCase();
+    // takes the rest of the word
+    const restWord = name2.substring(3);
+    output = firstTwo + capThirdLet + restWord;
+    console.log(output);
   } else if (options === "7") {
   }
   document.getElementById("outputfield").value = output;

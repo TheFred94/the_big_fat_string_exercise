@@ -26,6 +26,11 @@ function showOutput() {
     output = firstName;
     console.log(firstName);
   } else if (options === "2") {
+    fullName = input;
+    let firstName = "";
+    firstName = fullName.substring(0, fullName.indexOf(" "));
+    output = firstName.length;
+    console.log(firstName.length);
   } else if (options === "3") {
   } else if (options === "4") {
   } else if (options === "5") {

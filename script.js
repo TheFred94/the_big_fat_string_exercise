@@ -1,5 +1,4 @@
 "use strict;";
-
 const generateOutput = document.querySelector("#generateoutput").addEventListener("click", showOutput);
 
 function showOutput() {
@@ -65,23 +64,19 @@ function showOutput() {
     output = firstTwo + capThirdLet + restWord;
     console.log(output);
   } else if (options === "7") {
-    let fullWord = input;
-
-    let stringWord = fullWord
-      .split(/["-"  ]/)
-      .map((word) => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      })
-      .join(" ");
-
-    output = `${stringWord.substring(0, 1).toLowerCase()}${stringWord.substring(1)}`;
-
-    console.log(
-      fullWord.split(/[ ]/).map((word) => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      })
-    );
-    console.log(stringWord);
+    output = "";
+    // This turns the input from the inputfield into an array
+    // It then iterates trough every letter and checks if there is either a " " or "-" before the following letter
+    // If there is it takes the letter and makes it an uppercase letter
+    // If not it doesn't touch it.
+    Array.from(input).forEach((letter, i) => {
+      console.log(Array.from(input));
+      if (input[i - 1] === " " || input[i - 1] === "-") {
+        output += input[i].toUpperCase();
+      } else {
+        output += input[i];
+      }
+    });
   }
   document.getElementById("outputfield").value = output;
   console.log(output);

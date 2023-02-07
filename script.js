@@ -68,11 +68,19 @@ function showOutput() {
     let fullWord = input;
 
     let stringWord = fullWord
-      .split(/["-" ]/)
+      .split(/["-"  ]/)
       .map((word) => {
         return word.charAt(0).toUpperCase() + word.slice(1);
       })
       .join(" ");
+
+    let hyphen = fullWord
+      .split(/[-]/)
+      .map((word) => {
+        return word.charAt(1).toUpperCase + word.slice(2);
+      })
+      .join("-");
+
     output = `${stringWord.substring(0, 1).toLowerCase()}${stringWord.substring(1)}`;
 
     console.log(

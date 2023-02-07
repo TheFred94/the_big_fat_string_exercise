@@ -36,13 +36,16 @@ function showOutput() {
     let firstName = "";
     let middleName = "";
     let lastName = "";
-
     firstName = name.substring(0, name.indexOf(" "));
     middleName = name.substring(name.indexOf(" "), name.lastIndexOf(" "));
     lastName = name.substring(name.lastIndexOf(" "));
     output = middleName;
     console.log(middleName);
   } else if (options === "4") {
+    const fileName = input;
+    const files = [".jpg", ".png", ".gif", ".tiff", ".webp"];
+    output = files.some((files) => fileName.endsWith(files));
+    console.log(output);
   } else if (options === "5") {
   } else if (options === "6") {
   } else if (options === "7") {

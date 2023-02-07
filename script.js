@@ -49,9 +49,7 @@ function showOutput() {
   } else if (options === "5") {
     const password = input;
     let passwordLength = password.length;
-
     let hidePassword = "*".repeat(passwordLength);
-
     output = hidePassword;
     console.log(output);
   } else if (options === "6") {
@@ -67,18 +65,23 @@ function showOutput() {
     output = firstTwo + capThirdLet + restWord;
     console.log(output);
   } else if (options === "7") {
+    let fullWord = input;
+
+    let stringWord = fullWord
+      .split(/["-" ]/)
+      .map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+    output = `${stringWord.substring(0, 1).toLowerCase()}${stringWord.substring(1)}`;
+
+    console.log(
+      fullWord.split(/[ ]/).map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+    );
+    console.log(stringWord);
   }
   document.getElementById("outputfield").value = output;
   console.log(output);
 }
-
-let fullWord = "this is a long word that contains a -hyphen";
-
-let stringWord = fullWord
-  .split(/[- ]/)
-  .map((word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  })
-  .join(" ");
-
-console.log(stringWord);

@@ -32,6 +32,16 @@ function showOutput() {
     output = firstName.length;
     console.log(firstName.length);
   } else if (options === "3") {
+    const name = input;
+    let firstName = "";
+    let middleName = "";
+    let lastName = "";
+
+    firstName = name.substring(0, name.indexOf(" "));
+    middleName = name.substring(name.indexOf(" "), name.lastIndexOf(" "));
+    lastName = name.substring(name.lastIndexOf(" "));
+    output = middleName;
+    console.log(middleName);
   } else if (options === "4") {
   } else if (options === "5") {
   } else if (options === "6") {
